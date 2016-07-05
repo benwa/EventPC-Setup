@@ -1,0 +1,4 @@
+{
+    "preset": "fast",
+    "rate_control": "CBR"
+}
