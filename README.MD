@@ -3,11 +3,11 @@ Sets streaming and gaming machines up for event deployment
 
 ## How to Use
 1. Clone or download the repository from GitHub
-2. Download what you need and keep it in the same directory as the script.  It may be useful to get the full "offline" installer instead of the bootstrap installer.  Hint: [FileHippo](https://filehippo.com/)
-  - [OBS Studio](https://obsproject.com/) | `OBS-Studio.exe`
-  - [Steam](https://steampowered.com/) | `SteamSetup.exe`
-  - [Battle.net](https://battle.net/) | `Battle.net-Setup.exe`
-  - [Origin](https://origin.com/) | `OriginSetup.exe`
+2. Download what you need and keep it in the same directory as the script.  Make sure they are namedIt may be useful to get the full "offline" installer instead of the bootstrap installer.  Hint: [FileHippo](https://filehippo.com/) is your friend
+  - [OBS Studio](https://obsproject.com/) `OBS-Studio-*-Installer.exe`
+  - [Steam](https://steampowered.com/) `SteamSetup.exe`
+  - [Battle.net](https://battle.net/) `Battle.net-Setup.exe`
+  - [Origin](https://origin.com/) `OriginSetup.exe`
 3. Open a command prompt as a local administrator
 4. Run `powershell -ExecutionPolicyBypass`
 5. Run `.\EventPC-Setup.ps1 -Streamer` or `.\EventPC-Setup.ps1 -Gamer` depending on what the computer will be doing
