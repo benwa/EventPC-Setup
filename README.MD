@@ -15,10 +15,9 @@ Sets streaming and gaming machines up for event deployment
 
 ## Backing up and restoring stream settings
 1. Configure OBS Studio to your preference
-2. Open `%APPDATA%\obs-studio` and copy `global.ini`, and the `basic` folder to the same directory as the script.  You can also copy the `plugin_config` folder if you have custom settings)
+2. Open `%APPDATA%\obs-studio` and copy `global.ini`, and the `basic` folder to the `obs-studio\` directory.  You can also copy the `plugin_config` folder if you have custom settings)
 3. After installing OBS Studio, your settings will be restored
-4. Edit the record folder for OBS Studio
-5. Point the loop and logo videos to the correct folder
+4. Edit the record folder, logo, and loop videos for OBS Studio
 
 ## Backing up and restoring games
 ### Steam
