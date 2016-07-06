@@ -81,8 +81,9 @@ Process {
         If (Test-Path .\logo.mp4) {
             Copy-Item .\logo.mp4 $HOME\Event\logo.mp4
         }
-
-        Start-Process -Wait .\OBS-Studio.exe /S
+        If (Test-Path OBS-Studio-*-Installer.exe) {
+            Start-Process -Wait $(Resolve-Path OBS-Studio-*-Installer.exe -Relative) /S
+        }
         If (Test-Path .\basic) {
             Copy-Item .\basic\ $env:APPDATA\obs-studio\basic\ -Recurse -Force
         }
