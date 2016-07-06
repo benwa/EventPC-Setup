@@ -113,7 +113,7 @@ Process {
 
         #region Origin
         If (Test-Path .\OriginSetup.exe) {
-            .\OriginSetup.exe /S
+            Start-Process -Wait .\OriginSetup.exe /S
         }
         #endregion
     }
