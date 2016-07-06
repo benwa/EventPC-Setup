@@ -8,6 +8,7 @@ Sets streaming and gaming machines up for event deployment
   - [Steam](https://steampowered.com/) `SteamSetup.exe`
   - [Battle.net](https://battle.net/) `Battle.net-Setup.exe`
   - [Origin](https://origin.com/) `OriginSetup.exe`
+  - [Nvidia](https://nvidia.com/) `*-desktop-*-international-whql.exe`
 3. Open a command prompt as a local administrator
 4. Run `powershell -ExecutionPolicyBypass`
 5. Run `.\EventPC-Setup.ps1 -Streamer` or `.\EventPC-Setup.ps1 -Gamer` depending on what the computer will be doing

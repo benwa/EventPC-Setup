@@ -117,4 +117,10 @@ Process {
         }
         #endregion
     }
+
+    #region Graphics
+    If (Test-Path *-desktop-*-international-whql.exe) {
+        Start-Process -Wait $(Resolve-Path *-desktop-*-international-whql.exe -Relative)
+    }
+    #endregion
 }
