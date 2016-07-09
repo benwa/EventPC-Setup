@@ -39,9 +39,9 @@ Process {
     #endregion
 
     #region Date/Time
-    .\tzutil.exe /s "Central Standard Time"
-    .\w32tm.exe /config /manualpeerlist:pool.ntp.org /syncfromflags:MANUAL
-    .\w32tm.exe /resync
+    tzutil.exe /s "Central Standard Time"
+    w32tm.exe /config /manualpeerlist:pool.ntp.org /syncfromflags:MANUAL
+    w32tm.exe /resync
     #endregion
 
     #region Windows Update
@@ -56,21 +56,21 @@ Process {
     #endregion
 
     #region High Performance Power Profile
-    .\powercfg.exe -SetActive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
-    .\powercfg.exe -Hibernate Off
+    powercfg.exe -SetActive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+    powercfg.exe -Hibernate Off
     #endregion
 
     #region Screensaver
-    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveTimeOut -Value 0
-    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveActive -Value 0
-    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaverIsSecure -Value 0
+    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveTimeOut -Value 0 -Force
+    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveActive -Value 0 -Force
+    Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaverIsSecure -Value 0 -Force
     #endregion
 
     #region Wallpaper
     If (Test-Path .\wallpaper.png) {
         Copy-Item .\wallpaper.png $HOME\Event\wallpaper.png -Force
-        Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name Wallpaper -Value $HOME\Event\wallpaper.png
-        .\rundll32.exe USER32.dll,UpdatePerUserSystemParameters, 1, True
+        Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name Wallpaper -Value $HOME\Event\wallpaper.png -Force
+        rundll32.exe USER32.dll,UpdatePerUserSystemParameters, 1, True
     }
     #endregion
 
@@ -101,7 +101,7 @@ Process {
         #region Steam
         If (Test-Path .\SteamSetup.exe) {
             Start-Process -Wait .\SteamSetup.exe /S
-            .\'C:\Program Files (x86)\Steam\Steam.exe'
+            Start-Process 'C:\Program Files (x86)\Steam\Steam.exe'
         }
         #endregion
 
