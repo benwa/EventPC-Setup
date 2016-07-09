@@ -23,9 +23,12 @@ Sets streaming and gaming machines up for event deployment
 ## Backing up and restoring games
 ### Steam
 https://support.steampowered.com/kb_article.php?ref=8794-yphv-2033
+[ ] Write full instructions
 
 ### Battle.net
 http://us.battle.net/forums/en/bnet/topic/18300183782
+[ ] Write full instructions
 
 ### Origin
 http://help.ea.com/en/article/backing-up-and-restoring-your-origin-games/
+[ ] Write full instructions
