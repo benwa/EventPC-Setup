@@ -43,9 +43,9 @@ Sets streaming and gaming machines up for event deployment
 ### Battle.net
 http://us.battle.net/forums/en/bnet/topic/18300183782
 
-[ ] Write full instructions
+- [ ] Write full instructions
 
 ### Origin
 http://help.ea.com/en/article/backing-up-and-restoring-your-origin-games/
 
-[ ] Write full instructions
+- [ ] Write full instructions
