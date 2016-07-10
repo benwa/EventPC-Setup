@@ -1,1 +1,1 @@
-Refer to instructions [here](README.MD#steam)
+Refer to instructions [here](/README.MD#steam)
