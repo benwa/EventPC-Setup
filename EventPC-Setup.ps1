@@ -84,14 +84,14 @@ Process {
         If (Test-Path OBS-Studio-*-Installer.exe) {
             Start-Process -Wait $(Resolve-Path OBS-Studio-*-Installer.exe -Relative) /S
         }
-        If (Test-Path .\basic) {
-            Copy-Item .\basic\ $env:APPDATA\obs-studio\basic\ -Recurse -Force
+        If (Test-Path .\obs-studio\basic) {
+            Copy-Item .\obs-studio\basic\ $env:APPDATA\obs-studio\basic\ -Recurse -Force
         }
-        If (Test-Path .\plugin_config) {
-            Copy-Item .\plugin_config $env:APPDATA\obs-studio\plugin_config -Recurse -Force
+        If (Test-Path .\obs-studio\plugin_config) {
+            Copy-Item .\obs-studio\plugin_config $env:APPDATA\obs-studio\plugin_config -Recurse -Force
         }
-        If (Test-Path .\global.ini) {
-            Copy-Item .\global.ini $env:APPDATA\obs-studio\global.ini
+        If (Test-Path .\obs-studio\global.ini) {
+            Copy-Item .\obs-studio\global.ini $env:APPDATA\obs-studio\global.ini
         }
 
         Write-Host 'Fix loop, logo, and record locations manually'
@@ -121,7 +121,7 @@ Process {
 
     #region Graphics
     If (Test-Path *-desktop-*-international-whql.exe) {
-        Start-Process -Wait $(Resolve-Path *-desktop-*-international-whql.exe -Relative)
+        Start-Process -Wait $(Resolve-Path *-desktop-*-international-whql.exe -Relative) -clean -noreboot -passive -noeula -nofinish -nosplash
     }
     #endregion
 }
