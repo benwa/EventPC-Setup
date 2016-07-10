@@ -1,1 +1,1 @@
-Refer to instructions [here](benwa/EventPC-Setup/README.MD#steam)
+Refer to instructions [here](README.MD#steam)
