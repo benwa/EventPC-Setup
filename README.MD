@@ -34,13 +34,18 @@ Sets streaming and gaming machines up for event deployment
 
 ## Backing up and restoring games
 ### Steam
-https://support.steampowered.com/kb_article.php?ref=8794-yphv-2033
-[ ] Write full instructions
+1. Install Steam and the games you wish to restore to the event computer. I'll be using [Keep Talking and Nobody Explodes](http://www.keeptalkinggame.com/) as an example.
+2. Navigate to your `steamapps\` folder, which is normally `C:\Program Files (x86)\Steam\steamapps\`
+3. Copy the app manifest (`appmanifes_341800.acf` in this example) and paste it into the local `steamapps` folder
+4. Copy the game folder inside of the `common\` directory (`Keep Talking and Noboby Explodes` in this example) and paste it into the local `steamapps\common\` folder
+5. After installing Steam on the event PC, the game should be ready to play.
 
 ### Battle.net
 http://us.battle.net/forums/en/bnet/topic/18300183782
+
 [ ] Write full instructions
 
 ### Origin
 http://help.ea.com/en/article/backing-up-and-restoring-your-origin-games/
+
 [ ] Write full instructions

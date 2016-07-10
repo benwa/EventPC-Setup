@@ -102,7 +102,7 @@ Process {
         If (Test-Path .\SteamSetup.exe) {
             Start-Process -Wait .\SteamSetup.exe /S
             Start-Process 'C:\Program Files (x86)\Steam\Steam.exe'
-            Copy-Item .\steamapps\common\ 'C:\Program Files (x86)\Steam\steamapps\common\' -Recurse -Force
+            Copy-Item .\steamapps\ 'C:\Program Files (x86)\Steam\steamapps\' -Recurse -Force
         }
         #endregion
 
