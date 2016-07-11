@@ -118,6 +118,7 @@ Process {
         #region Origin
         If (Test-Path .\OriginSetup.exe) {
             Start-Process -Wait .\OriginSetup.exe /S
+            Copy-Item '.\Origin Games\' 'C:\Program Files (x86)\' -Recurse -Force
         }
         #endregion
     }
