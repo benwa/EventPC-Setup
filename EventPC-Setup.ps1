@@ -46,14 +46,14 @@ Process {
 
     #region Windows Update
     New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Force
-    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -PropertyType DWORD -Value 1
-    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -PropertyType DWORD -Value 5
+    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -Value 1 -Force
+    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -Value 5 -Force
     #endregion
 
     #region Notifications
     New-Item HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Force
-    Set-ItemProperty HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name DisableNotificationCenter -PropertyType DWORD -Value 1
-    Set-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name EnableBalloonTips -PropertyType DWORD -Value 0
+    Set-ItemProperty HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name DisableNotificationCenter -Value 1 -Force
+    Set-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name EnableBalloonTips -Value 0 -Force
     #endregion
 
     #region High Performance Power Profile
@@ -117,7 +117,7 @@ Process {
 
         #region Origin
         If (Test-Path .\OriginSetup.exe) {
-            Start-Process -Wait .\OriginSetup.exe /S
+            Start-Process .\OriginSetup.exe /S
             Copy-Item '.\Origin Games\' 'C:\Program Files (x86)\' -Recurse -Force
         }
         #endregion
