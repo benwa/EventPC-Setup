@@ -16,15 +16,15 @@ Sets streaming and gaming machines up for event deployment
 3. Copy stream settings into `obs-studio\` using the instructions under [Backing up and restoring stream settings](#backing-up-and-restoring-stream-settings)
 4. Copy games into the appropriate folder using the instructions under [Backing up and restoring games](#backing-up-and-restoring-games)
 
-     Type|Location
-     ---|---
-     Steam|`steamapps\`
-     Battle.net|`battle.net\`
-     Origin|`origin\`
+    Type|Location
+    ---|---
+    Steam|`steamapps\`
+    Battle.net|`battle.net\`
+    Origin|`origin\`
 
 5. Open a command prompt as a local administrator
-6. Run `powershell -ExecutionPolicyBypass`
-7. Run `.\EventPC-Setup.ps1 -Streamer` or `.\EventPC-Setup.ps1 -Gamer` depending on what the computer will be doing
+6. Run `powershell -ExecutionPolicy Bypass`
+7. Run `.\EventPC-Setup.ps1 -Streamer` or `.\EventPC-Setup.ps1 -Gamer` depending on what the PC will be doing
 
 ## Backing up and restoring stream settings
 1. Configure OBS Studio to your preference
@@ -34,11 +34,11 @@ Sets streaming and gaming machines up for event deployment
 
 ## Backing up and restoring games
 ### Steam
-1. Install Steam and the games you wish to restore to the event computer. I'll be using [Keep Talking and Nobody Explodes](http://www.keeptalkinggame.com/) as an example.
+1. Install Steam and the games you wish to restore to the event PC. I'll be using [Keep Talking and Nobody Explodes](http://www.keeptalkinggame.com/) as an example
 2. Navigate to your `steamapps\` folder, which is normally `C:\Program Files (x86)\Steam\steamapps\`
 3. Copy the app manifest (`appmanifes_341800.acf` in this example) and paste it into the local `steamapps` folder
 4. Copy the game folder inside of the `common\` directory (`Keep Talking and Noboby Explodes` in this example) and paste it into the local `steamapps\common\` folder
-5. After installing Steam on the event PC, the game should be ready to play.
+5. After installing Steam on the event PC, the game should be ready to play
 
 ### Battle.net
 http://us.battle.net/forums/en/bnet/topic/18300183782

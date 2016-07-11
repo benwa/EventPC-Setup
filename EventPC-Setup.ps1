@@ -46,13 +46,14 @@ Process {
 
     #region Windows Update
     New-Item HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Force
-    New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -PropertyType DWORD -Value 1
-    New-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -PropertyType DWORD -Value 5
+    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name NoAutoUpdate -PropertyType DWORD -Value 1
+    Set-ItemProperty HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU -Name AUOptions -PropertyType DWORD -Value 5
     #endregion
 
     #region Notifications
-    New-ItemProperty HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name DisableNotificationCenter -PropertyType DWORD -Value 1
-    New-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name EnableBalloonTips -PropertyType DWORD -Value 0
+    New-Item HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Force
+    Set-ItemProperty HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name DisableNotificationCenter -PropertyType DWORD -Value 1
+    Set-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name EnableBalloonTips -PropertyType DWORD -Value 0
     #endregion
 
     #region High Performance Power Profile
@@ -61,6 +62,8 @@ Process {
     #endregion
 
     #region Screensaver
+    New-Item 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel' -Force
+    New-Item 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Force
     Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveTimeOut -Value 0 -Force
     Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveActive -Value 0 -Force
     Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaverIsSecure -Value 0 -Force
