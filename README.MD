@@ -46,6 +46,7 @@ http://us.battle.net/forums/en/bnet/topic/18300183782
 - [ ] Write full instructions
 
 ### Origin
-http://help.ea.com/en/article/backing-up-and-restoring-your-origin-games/
-
-- [ ] Write full instructions
+1. Install Origin and the games you wish to restore to the event PC. I'll be using [Peggle](http://www.popcap.com/peggle-1) as an example
+2. Navigate to your `Origin Games\` folder, which is normally `C:\Program Files (x86)\Origin Games\`
+3. Copy the game folder (`Peggle Deluxe` in this example) and paste it into the local `Origin Games` folder
+4. After installing Origin on the event PC, "download" the game; it should be ready to play after a few seconds
