@@ -68,6 +68,12 @@ Process {
     Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaveActive -Value 0 -Force
     Set-ItemProperty 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop' -Name ScreenSaverIsSecure -Value 0 -Force
     #endregion
+    
+    #region Accessibility
+    Set-ItemProperty 'HKCU:\Control Panel\Accessibility\MouseKeys\' -Name Flags -Value 58 -Force
+    Set-ItemProperty 'HKCU:\Control Panel\Accessibility\StickyKeys\' -Name Flags -Value 506 -Force
+    Set-ItemProperty 'HKCU:\Control Panel\Accessibility\ToggleKeys\' -Name Flags -Value 58 -Force
+    #endregion
 
     #region Wallpaper
     If (Test-Path .\wallpaper.png) {
