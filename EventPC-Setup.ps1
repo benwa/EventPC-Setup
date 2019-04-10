@@ -1,22 +1,25 @@
-﻿<#
+<#
 .SYNOPSIS
-Sets streaming and gaming machines up for event deployment
-
-Author: Bennett Blodinger (@frogpocalypse)
-License: MIT
+  Sets streaming and gaming machines up for event deployment
 
 .DESCRIPTION
-Prepares streaming and gaming machines for live events.  See README.MD for setup instructions.
+  Prepares streaming and gaming machines for live events.  See README.MD for setup instructions.
 
 .PARAMETER Streamer
-Runs through the stream PC setup
+  Runs through the stream PC setup
 
 .PARAMETER Gamer
-Runs through the game PC setup
+  Runs through the game PC setup
+
+.NOTES
+  Version: 1.0
+  Author: Bennett Blodinger
+  License: MIT
 
 .LINK
-https://github.com/benwa/EventPC-Setup
+  https://github.com/benwa/EventPC-Setup
 #>
+
 [CmdletBinding()]
 Param (
     [Parameter(Position=1, ParameterSetName='Default Param Set')]
@@ -82,6 +85,12 @@ Process {
         rundll32.exe USER32.dll,UpdatePerUserSystemParameters, 1, True
     }
     #endregion
+    
+    #region Graphics
+    If (Test-Path *-desktop-*-international-whql.exe) {
+        Start-Process -Wait $(Resolve-Path *-desktop-*-international-whql.exe -Relative) -clean -noreboot -passive -noeula -nofinish -nosplash
+    }
+    #endregion
 
     If ($Streamer) {
         If (Test-Path .\loop.mp4) {
@@ -128,10 +137,4 @@ Process {
         }
         #endregion
     }
-
-    #region Graphics
-    If (Test-Path *-desktop-*-international-whql.exe) {
-        Start-Process -Wait $(Resolve-Path *-desktop-*-international-whql.exe -Relative) -clean -noreboot -passive -noeula -nofinish -nosplash
-    }
-    #endregion
 }
