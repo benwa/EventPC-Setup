@@ -136,5 +136,11 @@ Process {
             Copy-Item '.\Origin Games\' 'C:\Program Files (x86)\' -Recurse -Force
         }
         #endregion
+        
+        #region Epic Games
+        If (Test-Path .\EpicGamesLauncherInstaller.msi) {
+            Start-Process msiexec -ArgumentList '/i .\EpicGamesLauncherInstaller.msi /qn /norestart' -Wait -PassThru
+        }
+        #endregion
     }
 }
