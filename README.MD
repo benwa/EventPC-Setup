@@ -11,6 +11,7 @@ Sets streaming and gaming machines up for event deployment
     [Steam](https://steampowered.com/)|`SteamSetup.exe`
     [Battle.net](https://battle.net/)|`Battle.net-Setup.exe`
     [Origin](https://origin.com/)|`OriginSetup.exe`
+    [Epic Games](https://epicgames.com/)|`EpicGamesLauncherInstaller.msi`
     [NVIDIA](https://nvidia.com/)|`*-desktop-*-international-whql.exe`
 
 3. Copy stream settings into `obs-studio\` using the instructions under [Backing up and restoring stream settings](#backing-up-and-restoring-stream-settings)
@@ -21,6 +22,7 @@ Sets streaming and gaming machines up for event deployment
     Steam|`steamapps\`
     Battle.net|`battle.net\`
     Origin|`origin\`
+    Epic Games|`epic\`
 
 5. Open a command prompt as a local administrator
 6. Run `powershell -ExecutionPolicy Bypass`
@@ -50,3 +52,6 @@ http://us.battle.net/forums/en/bnet/topic/18300183782
 2. Navigate to your `Origin Games\` folder, which is normally `C:\Program Files (x86)\Origin Games\`
 3. Copy the game folder (`Peggle Deluxe` in this example) and paste it into the local `Origin Games` folder
 4. After installing Origin on the event PC, "download" the game; it should be ready to play after a few seconds
+
+### Epic Games
+- [ ] Write full instructions
